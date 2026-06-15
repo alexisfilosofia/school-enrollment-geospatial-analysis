@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Enrollment and Geospatial Analysis | Portfolio Project</title>
+  <meta name="description" content="A privacy-preserving portfolio project using Python, Pandas, Jupyter and geospatial analysis to study historical school enrollment records." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a href="#overview">Overview</a>
+      <a href="#quantitative">Quantitative Analysis</a>
+      <a href="#geospatial">Geospatial Analysis</a>
+      <a href="#privacy">Data Privacy</a>
+      <a href="#repository">Repository</a>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Portfolio Project · Educational Analytics · Python</p>
+      <h1>School Enrollment and Geospatial Analysis</h1>
+      <p class="subtitle">
+        A privacy-preserving analytical workflow for studying historical school enrollment records through
+        quantitative, temporal and geospatial methods.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="README.md">Read project documentation</a>
+        <a class="button secondary" href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Open quantitative notebook</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <div class="section-header">
+        <p class="eyebrow">Overview</p>
+        <h2>From institutional records to analytical outputs</h2>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Problem</h3>
+          <p>
+            School enrollment records are often stored in fragmented spreadsheets. These files may contain
+            inconsistent structures, historical variations in registration practices and sensitive student-level
+            information. The analytical challenge is to extract meaningful patterns without exposing private data.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Solution</h3>
+          <p>
+            This project turns enrollment data into a structured analytical workflow: annual enrollment trends,
+            age composition, course-level frequency tables, distance-to-school analysis and aggregate
+            sociodemographic indicators.
+          </p>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-value">1910–1915</span>
+          <span class="metric-label">Historical registry years analyzed</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">6</span>
+          <span class="metric-label">Entry-course levels summarized</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">Python</span>
+          <span class="metric-label">Core analytical environment</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="quantitative" class="section">
+      <div class="section-header">
+        <p class="eyebrow">Quantitative Analysis</p>
+        <h2>Enrollment volume, age structure and course-level patterns</h2>
+        <p>
+          The quantitative component studies how enrollment records vary across years, age groups and entry courses.
+          The public version includes only aggregate visual outputs.
+        </p>
+      </div>
+
+      <article class="output">
+        <div class="output-text">
+          <h3>Annual enrollment volume</h3>
+          <p>
+            The annual enrollment chart provides a first view of institutional variation over time. It allows the
+            analyst to detect changes in the number of registered students and identify periods of growth.
+          </p>
+        </div>
+        <figure>
+          <img src="assets/screenshots/01_total_enrollment_by_year.png" alt="Annual enrollment by year bar chart" />
+          <figcaption>Annual student registration counts by registry year.</figcaption>
+        </figure>
+      </article>
+
+      <article class="output reverse">
+        <div class="output-text">
+          <h3>Age-range composition</h3>
+          <p>
+            The stacked age-range chart summarizes the internal age composition of enrollment records. This makes it
+            possible to observe whether the student population remains stable or changes structurally across years.
+          </p>
+        </div>
+        <figure>
+          <img src="assets/screenshots/02_age_range_distribution_by_year.png" alt="Stacked bar chart of age range distribution by year" />
+          <figcaption>Age-range distribution by registry year.</figcaption>
+        </figure>
+      </article>
+
+      <article class="output">
+        <div class="output-text">
+          <h3>Age dispersion and outlier detection</h3>
+          <p>
+            The boxplot compares median age, variability and outlier cases across registry years. It provides a more
+            analytical view than simple averages because it shows the shape and dispersion of each yearly distribution.
+          </p>
+        </div>
+        <figure>
+          <img src="assets/screenshots/03_age_boxplot_by_year.png" alt="Boxplot of age by enrollment year" />
+          <figcaption>Age distribution and outlier detection by year.</figcaption>
+        </figure>
+      </article>
+
+      <article class="table-block">
+        <div>
+          <h3>Entry course frequency by year</h3>
+          <p>
+            The course-year table condenses the entry course structure into a compact aggregate matrix. This is useful
+            for identifying which course levels concentrate more enrollment records in each year.
+          </p>
+        </div>
+
+        <div class="responsive-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>1º Año</th>
+                <th>2º Año</th>
+                <th>3º Año</th>
+                <th>4º Año</th>
+                <th>5º Año</th>
+                <th>6º Año</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1910</td><td>44</td><td>22</td><td>21</td><td>12</td><td>35</td><td>21</td></tr>
+              <tr><td>1911</td><td>46</td><td>24</td><td>15</td><td>22</td><td>32</td><td>21</td></tr>
+              <tr><td>1912</td><td>67</td><td>30</td><td>21</td><td>14</td><td>38</td><td>13</td></tr>
+              <tr><td>1913</td><td>69</td><td>43</td><td>24</td><td>17</td><td>53</td><td>10</td></tr>
+              <tr><td>1914</td><td>126</td><td>45</td><td>45</td><td>19</td><td>66</td><td>15</td></tr>
+              <tr><td>1915</td><td>139</td><td>78</td><td>45</td><td>40</td><td>38</td><td>15</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section id="geospatial" class="section">
+      <div class="section-header">
+        <p class="eyebrow">Geospatial Analysis</p>
+        <h2>Territorial reach, accessibility and aggregate sociodemographic indicators</h2>
+        <p>
+          The geospatial component focuses on spatial patterns without publishing row-level addresses or exact
+          identifiable locations.
+        </p>
+      </div>
+
+      <article class="output">
+        <div class="output-text">
+          <h3>Distance-to-school distribution</h3>
+          <p>
+            The distance histogram summarizes how far students lived from the institution. This type of output can help
+            describe the school’s territorial reach and the accessibility profile of its student population.
+          </p>
+        </div>
+        <figure>
+          <img src="assets/screenshots/05_distance_to_school_distribution.png" alt="Histogram of approximate distance to school" />
+          <figcaption>Approximate distance from residence to school, aggregated as a histogram.</figcaption>
+        </figure>
+      </article>
+
+      <article class="output reverse">
+        <div class="output-text">
+          <h3>Guardian nationality distribution</h3>
+          <p>
+            The guardian nationality chart is included only as an aggregate frequency distribution. It illustrates how
+            sociodemographic attributes can be summarized without exposing individual records.
+          </p>
+        </div>
+        <figure>
+          <img src="assets/screenshots/06_guardian_nationality_distribution.png" alt="Guardian nationality distribution bar chart" />
+          <figcaption>Aggregate guardian nationality frequency distribution.</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section id="privacy" class="section dark">
+      <div class="section-header">
+        <p class="eyebrow">Ethical and Privacy-Aware Publication</p>
+        <h2>Why the public repository does not include raw data</h2>
+      </div>
+
+      <div class="grid three">
+        <div class="card dark-card">
+          <h3>No raw student data</h3>
+          <p>
+            Original datasets are not published because they may contain names, addresses, family information and
+            institutional records.
+          </p>
+        </div>
+
+        <div class="card dark-card">
+          <h3>Aggregated outputs only</h3>
+          <p>
+            The public version prioritizes aggregate charts, summary tables and sanitized notebooks rather than
+            row-level records.
+          </p>
+        </div>
+
+        <div class="card dark-card">
+          <h3>Spatial caution</h3>
+          <p>
+            Exact point maps and sensitive demographic categories should not be combined publicly without strong
+            anonymization or aggregation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="repository" class="section">
+      <div class="section-header">
+        <p class="eyebrow">Repository</p>
+        <h2>Technical materials</h2>
+        <p>
+          The repository includes sanitized notebooks, documentation, aggregate tables and selected visual outputs.
+        </p>
+      </div>
+
+      <div class="links">
+        <a href="README.md">Project README</a>
+        <a href="docs/methodology.md">Methodological note</a>
+        <a href="docs/portfolio_description.md">Portfolio description</a>
+        <a href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Quantitative notebook</a>
+        <a href="notebooks/02_geospatial_analysis_sanitized.ipynb">Geospatial notebook</a>
+      </div>
+
+      <div class="tech-stack">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Matplotlib</span>
+        <span>Folium</span>
+        <span>GeoPandas</span>
+        <span>Geopy</span>
+        <span>Jupyter</span>
+        <span>Google Colab</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Portfolio project by Alexis · Educational Analytics · Data Science · Python</p>
+  </footer>
+</body>
+</html>
