@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-label="Distance to school distribution">
+  <rect width="1100" height="640" fill="#ffffff"/>
+  <text x="70" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172033">Distance-to-school distribution</text>
+  <text x="70" y="105" font-family="Arial, sans-serif" font-size="17" fill="#5f6f82">Aggregate histogram of approximate distance between student residence and institution.</text>
+  <line x1="100" y1="530" x2="1010" y2="530" stroke="#2b3442" stroke-width="2"/>
+  <line x1="100" y1="165" x2="100" y2="530" stroke="#2b3442" stroke-width="2"/>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="100" y1="460" x2="1010" y2="460"/><line x1="100" y1="390" x2="1010" y2="390"/><line x1="100" y1="320" x2="1010" y2="320"/><line x1="100" y1="250" x2="1010" y2="250"/><line x1="100" y1="180" x2="1010" y2="180"/>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="145" y="210" width="100" height="320" rx="8" fill="#174a7c"/><text x="195" y="565" font-size="15" fill="#2d3748">0–1 km</text>
+    <rect x="285" y="245" width="100" height="285" rx="8" fill="#174a7c"/><text x="335" y="565" font-size="15" fill="#2d3748">1–2 km</text>
+    <rect x="425" y="305" width="100" height="225" rx="8" fill="#174a7c"/><text x="475" y="565" font-size="15" fill="#2d3748">2–3 km</text>
+    <rect x="565" y="365" width="100" height="165" rx="8" fill="#174a7c"/><text x="615" y="565" font-size="15" fill="#2d3748">3–4 km</text>
+    <rect x="705" y="425" width="100" height="105" rx="8" fill="#174a7c"/><text x="755" y="565" font-size="15" fill="#2d3748">4–5 km</text>
+    <rect x="845" y="470" width="100" height="60" rx="8" fill="#174a7c"/><text x="895" y="565" font-size="15" fill="#2d3748">5+ km</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#718096"><text x="55" y="535">low</text><text x="52" y="180">high</text></g>
+  <text x="70" y="610" font-family="Arial, sans-serif" font-size="14" fill="#718096">Distances are shown only in aggregate form to avoid publishing address-level information.</text>
+</svg>
