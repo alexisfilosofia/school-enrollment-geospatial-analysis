@@ -82,7 +82,7 @@
         <h2>Enrollment volume, age structure and course-level patterns</h2>
         <p>
           The quantitative component studies how enrollment records vary across years, age groups and entry courses.
-          The public version includes only aggregate visual outputs.
+          The public version includes only aggregate visual outputs and public-safe renderings.
         </p>
       </div>
 
@@ -95,7 +95,7 @@
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/01_total_enrollment_by_year.png" alt="Annual enrollment by year bar chart" />
+          <img src="assets/screenshots/01_total_enrollment_by_year.svg" alt="Annual enrollment by year bar chart" />
           <figcaption>Annual student registration counts by registry year.</figcaption>
         </figure>
       </article>
@@ -104,13 +104,13 @@
         <div class="output-text">
           <h3>Age-range composition</h3>
           <p>
-            The stacked age-range chart summarizes the internal age composition of enrollment records. This makes it
-            possible to observe whether the student population remains stable or changes structurally across years.
+            The stacked age-range visualization summarizes the internal age composition of enrollment records. This makes it
+            possible to communicate whether the student population remains stable or changes structurally across years.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/02_age_range_distribution_by_year.png" alt="Stacked bar chart of age range distribution by year" />
-          <figcaption>Age-range distribution by registry year.</figcaption>
+          <img src="assets/screenshots/02_age_range_distribution_by_year.svg" alt="Stacked bar chart of age range distribution by year" />
+          <figcaption>Public-safe rendering of age-range distribution by registry year.</figcaption>
         </figure>
       </article>
 
@@ -118,12 +118,12 @@
         <div class="output-text">
           <h3>Age dispersion and outlier detection</h3>
           <p>
-            The boxplot compares median age, variability and outlier cases across registry years. It provides a more
-            analytical view than simple averages because it shows the shape and dispersion of each yearly distribution.
+            The boxplot-style figure explains the distributional logic used in the notebook: median comparison,
+            variability and outlier review across registry years.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/03_age_boxplot_by_year.png" alt="Boxplot of age by enrollment year" />
+          <img src="assets/screenshots/03_age_boxplot_by_year.svg" alt="Boxplot-style visualization of age by enrollment year" />
           <figcaption>Age distribution and outlier detection by year.</figcaption>
         </figure>
       </article>
@@ -182,8 +182,8 @@
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/05_distance_to_school_distribution.png" alt="Histogram of approximate distance to school" />
-          <figcaption>Approximate distance from residence to school, aggregated as a histogram.</figcaption>
+          <img src="assets/screenshots/05_distance_to_school_distribution.svg" alt="Histogram-style visualization of approximate distance to school" />
+          <figcaption>Approximate distance from residence to school, aggregated as a histogram-style visualization.</figcaption>
         </figure>
       </article>
 
@@ -192,11 +192,11 @@
           <h3>Guardian nationality distribution</h3>
           <p>
             The guardian nationality chart is included only as an aggregate frequency distribution. It illustrates how
-            sociodemographic attributes can be summarized without exposing individual records.
+            sociodemographic attributes can be summarized without exposing individual records or linking categories to addresses.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/06_guardian_nationality_distribution.png" alt="Guardian nationality distribution bar chart" />
+          <img src="assets/screenshots/06_guardian_nationality_distribution.svg" alt="Aggregate guardian nationality distribution bar chart" />
           <figcaption>Aggregate guardian nationality frequency distribution.</figcaption>
         </figure>
       </article>
@@ -248,6 +248,7 @@
         <a href="README.md">Project README</a>
         <a href="docs/methodology.md">Methodological note</a>
         <a href="docs/portfolio_description.md">Portfolio description</a>
+        <a href="docs/github_pages_setup.md">GitHub Pages setup</a>
         <a href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Quantitative notebook</a>
         <a href="notebooks/02_geospatial_analysis_sanitized.ipynb">Geospatial notebook</a>
       </div>
@@ -261,7 +262,9 @@
         <span>GeoPandas</span>
         <span>Geopy</span>
         <span>Jupyter</span>
-        <span>Google Colab</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>GitHub Pages</span>
       </div>
     </section>
   </main>
