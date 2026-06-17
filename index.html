@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>School Enrollment and Geospatial Analysis | Portfolio Project</title>
-  <meta name="description" content="A privacy-preserving portfolio project using Python, Pandas, Jupyter and geospatial analysis to study historical school enrollment records." />
+  <meta name="description" content="Notebook-derived portfolio project using Python, Pandas, Jupyter and geospatial analysis to study historical school enrollment records." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -12,9 +12,10 @@
   <header class="hero">
     <nav class="nav">
       <a href="#overview">Overview</a>
-      <a href="#quantitative">Quantitative Analysis</a>
-      <a href="#geospatial">Geospatial Analysis</a>
-      <a href="#privacy">Data Privacy</a>
+      <a href="#notebooks">Notebooks</a>
+      <a href="#quantitative">Quantitative</a>
+      <a href="#geospatial">Geospatial</a>
+      <a href="#privacy">Privacy</a>
       <a href="#repository">Repository</a>
     </nav>
 
@@ -22,13 +23,13 @@
       <p class="eyebrow">Portfolio Project · Educational Analytics · Python</p>
       <h1>School Enrollment and Geospatial Analysis</h1>
       <p class="subtitle">
-        A privacy-preserving analytical workflow for studying historical school enrollment records through
-        quantitative, temporal and geospatial methods.
+        A notebook-derived, privacy-aware analytical project based on historical school enrollment records from 1910 to 1915.
+        The project transforms fragmented institutional spreadsheets into aggregate quantitative, temporal and geospatial outputs.
       </p>
 
       <div class="hero-actions">
         <a class="button primary" href="README.md">Read project documentation</a>
-        <a class="button secondary" href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Open quantitative notebook</a>
+        <a class="button secondary" href="docs/notebook_output_audit.md">Notebook output audit</a>
       </div>
     </section>
   </header>
@@ -37,41 +38,68 @@
     <section id="overview" class="section">
       <div class="section-header">
         <p class="eyebrow">Overview</p>
-        <h2>From institutional records to analytical outputs</h2>
+        <h2>From Colab notebooks to a public portfolio report</h2>
       </div>
 
       <div class="grid two">
         <div class="card">
           <h3>Problem</h3>
           <p>
-            School enrollment records are often stored in fragmented spreadsheets. These files may contain
-            inconsistent structures, historical variations in registration practices and sensitive student-level
-            information. The analytical challenge is to extract meaningful patterns without exposing private data.
+            Historical school records are often distributed across spreadsheets with heterogeneous labels, date formats,
+            course names and sensitive personal information. The challenge is to produce meaningful analysis without
+            publishing student-level data.
           </p>
         </div>
 
         <div class="card">
-          <h3>Solution</h3>
+          <h3>Approach</h3>
           <p>
-            This project turns enrollment data into a structured analytical workflow: annual enrollment trends,
-            age composition, course-level frequency tables, distance-to-school analysis and aggregate
-            sociodemographic indicators.
+            The project reorganizes outputs from two Colab notebooks into a public web report. It keeps aggregate findings,
+            selected charts and methodological notes, while excluding raw names, addresses and row-level records.
           </p>
         </div>
       </div>
 
       <div class="metrics">
         <div class="metric">
+          <span class="metric-value">1,408</span>
+          <span class="metric-label">Consolidated enrollment records</span>
+        </div>
+        <div class="metric">
           <span class="metric-value">1910–1915</span>
-          <span class="metric-label">Historical registry years analyzed</span>
+          <span class="metric-label">Historical registry years</span>
         </div>
         <div class="metric">
-          <span class="metric-value">6</span>
-          <span class="metric-label">Entry-course levels summarized</span>
+          <span class="metric-value">323</span>
+          <span class="metric-label">Geocoded cases in spatial analysis</span>
         </div>
-        <div class="metric">
-          <span class="metric-value">Python</span>
-          <span class="metric-label">Core analytical environment</span>
+      </div>
+    </section>
+
+    <section id="notebooks" class="section">
+      <div class="section-header">
+        <p class="eyebrow">Notebook sources</p>
+        <h2>What was taken from the original Colab work</h2>
+        <p>
+          The public site is based on the outputs and printed summaries from the original Colab notebooks. Sensitive raw data
+          and row-level tables are intentionally not included.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Archivo_PST_Cuanti.ipynb</h3>
+          <p>
+            Consolidates enrollment spreadsheets, normalizes course labels, reconstructs dates and produces quantitative
+            outputs: annual enrollment, age statistics, age ranges, course-year matrices and interannual course variation.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Archivo_PST_GEO_Final.ipynb</h3>
+          <p>
+            Builds the geospatial layer: distance-to-school calculations, geocoded case summaries, occupation groups,
+            nationality distributions and export decisions for maps and public-safe reporting.
+          </p>
         </div>
       </div>
     </section>
@@ -79,19 +107,21 @@
     <section id="quantitative" class="section">
       <div class="section-header">
         <p class="eyebrow">Quantitative Analysis</p>
-        <h2>Enrollment volume, age structure and course-level patterns</h2>
+        <h2>Enrollment volume, age structure and course-level dynamics</h2>
         <p>
-          The quantitative component studies how enrollment records vary across years, age groups and entry courses.
-          The public version includes only aggregate visual outputs and public-safe renderings.
+          These outputs are derived from the quantitative notebook and converted into public-safe aggregate views.
         </p>
       </div>
 
       <article class="output">
         <div class="output-text">
-          <h3>Annual enrollment volume</h3>
+          <h3>Annual enrollment growth</h3>
           <p>
-            The annual enrollment chart provides a first view of institutional variation over time. It allows the
-            analyst to detect changes in the number of registered students and identify periods of growth.
+            The consolidated dataset grows from <strong>155</strong> records in 1910 to <strong>355</strong> in 1915. The strongest
+            increase appears after 1913, with a marked rise in 1914 and 1915.
+          </p>
+          <p>
+            Notebook source: annual count table and bar chart from <code>Archivo_PST_Cuanti.ipynb</code>.
           </p>
         </div>
         <figure>
@@ -102,38 +132,38 @@
 
       <article class="output reverse">
         <div class="output-text">
-          <h3>Age-range composition</h3>
+          <h3>Age composition</h3>
           <p>
-            The stacked age-range visualization summarizes the internal age composition of enrollment records. This makes it
-            possible to communicate whether the student population remains stable or changes structurally across years.
+            The notebook groups ages into interpretable bands: 13, 14–15, 16–17, 18–24 and 25+. This supports a reading of
+            the enrollment population beyond averages alone.
           </p>
         </div>
         <figure>
           <img src="assets/screenshots/02_age_range_distribution_by_year.svg" alt="Stacked bar chart of age range distribution by year" />
-          <figcaption>Public-safe rendering of age-range distribution by registry year.</figcaption>
+          <figcaption>Aggregate age-range distribution by registry year.</figcaption>
         </figure>
       </article>
 
       <article class="output">
         <div class="output-text">
-          <h3>Age dispersion and outlier detection</h3>
+          <h3>Age dispersion and outliers</h3>
           <p>
-            The boxplot-style figure explains the distributional logic used in the notebook: median comparison,
-            variability and outlier review across registry years.
+            The median age is stable at <strong>18</strong> from 1910 to 1914 and falls to <strong>17</strong> in 1915. The maximum value
+            reaches <strong>37</strong> in 1915, treated as an outlier requiring contextual review rather than automatic deletion.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/03_age_boxplot_by_year.svg" alt="Boxplot-style visualization of age by enrollment year" />
+          <img src="assets/screenshots/03_age_boxplot_by_year.svg" alt="Boxplot of age by enrollment year" />
           <figcaption>Age distribution and outlier detection by year.</figcaption>
         </figure>
       </article>
 
       <article class="table-block">
         <div>
-          <h3>Entry course frequency by year</h3>
+          <h3>Course-year matrix</h3>
           <p>
-            The course-year table condenses the entry course structure into a compact aggregate matrix. This is useful
-            for identifying which course levels concentrate more enrollment records in each year.
+            The course-level matrix shows that growth is concentrated in the lower entry courses. Between 1910 and 1915,
+            1º Año grows from 44 to 139 records, while 2º Año grows from 22 to 78 records.
           </p>
         </div>
 
@@ -161,15 +191,40 @@
           </table>
         </div>
       </article>
+
+      <article class="table-block">
+        <div>
+          <h3>Course-level change, 1910–1915</h3>
+          <p>
+            The notebook also computes absolute and relative change between the first and last year. This highlights that
+            the expansion is not homogeneous across all courses.
+          </p>
+        </div>
+        <div class="responsive-table">
+          <table>
+            <thead>
+              <tr><th>Course</th><th>1910</th><th>1915</th><th>Absolute change</th><th>Relative change</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1º Año</td><td>44</td><td>139</td><td>+95</td><td>+215.91%</td></tr>
+              <tr><td>2º Año</td><td>22</td><td>78</td><td>+56</td><td>+254.55%</td></tr>
+              <tr><td>3º Año</td><td>21</td><td>45</td><td>+24</td><td>+114.29%</td></tr>
+              <tr><td>4º Año</td><td>12</td><td>40</td><td>+28</td><td>+233.33%</td></tr>
+              <tr><td>5º Año</td><td>35</td><td>38</td><td>+3</td><td>+8.57%</td></tr>
+              <tr><td>6º Año</td><td>21</td><td>15</td><td>-6</td><td>-28.57%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
     </section>
 
     <section id="geospatial" class="section">
       <div class="section-header">
         <p class="eyebrow">Geospatial Analysis</p>
-        <h2>Territorial reach, accessibility and aggregate sociodemographic indicators</h2>
+        <h2>Territorial reach and aggregate socio-spatial indicators</h2>
         <p>
-          The geospatial component focuses on spatial patterns without publishing row-level addresses or exact
-          identifiable locations.
+          The geospatial notebook is represented through aggregate summaries only. Exact addresses, raw coordinates and
+          individual point maps are excluded from the public version.
         </p>
       </div>
 
@@ -177,59 +232,79 @@
         <div class="output-text">
           <h3>Distance-to-school distribution</h3>
           <p>
-            The distance histogram summarizes how far students lived from the institution. This type of output can help
-            describe the school’s territorial reach and the accessibility profile of its student population.
+            The geospatial notebook reports <strong>323</strong> geocoded cases. The approximate mean distance to school is
+            <strong>3.12 km</strong>, while the median distance is <strong>2.34 km</strong>.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/05_distance_to_school_distribution.svg" alt="Histogram-style visualization of approximate distance to school" />
-          <figcaption>Approximate distance from residence to school, aggregated as a histogram-style visualization.</figcaption>
+          <img src="assets/screenshots/05_distance_to_school_distribution.svg" alt="Histogram of approximate distance to school" />
+          <figcaption>Approximate distance from residence to school, aggregated as a histogram-style output.</figcaption>
         </figure>
       </article>
 
       <article class="output reverse">
         <div class="output-text">
-          <h3>Guardian nationality distribution</h3>
+          <h3>Guardian nationality</h3>
           <p>
-            The guardian nationality chart is included only as an aggregate frequency distribution. It illustrates how
-            sociodemographic attributes can be summarized without exposing individual records or linking categories to addresses.
+            Guardian nationality is more heterogeneous than student nationality: Argentine, Italian, missing/undetermined,
+            Spanish and French are the most frequent categories in the notebook summary.
           </p>
         </div>
         <figure>
-          <img src="assets/screenshots/06_guardian_nationality_distribution.svg" alt="Aggregate guardian nationality distribution bar chart" />
+          <img src="assets/screenshots/06_guardian_nationality_distribution.svg" alt="Guardian nationality distribution bar chart" />
           <figcaption>Aggregate guardian nationality frequency distribution.</figcaption>
         </figure>
+      </article>
+
+      <article class="table-block">
+        <div>
+          <h3>Socio-spatial summary</h3>
+          <p>
+            These indicators come from the geospatial notebook and summarize the public-safe dimensions of the spatial analysis.
+          </p>
+        </div>
+        <div class="responsive-table">
+          <table>
+            <thead><tr><th>Indicator</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Geocoded cases</td><td>323</td></tr>
+              <tr><td>Distinct occupational groups</td><td>9</td></tr>
+              <tr><td>Distinct nationalities</td><td>7</td></tr>
+              <tr><td>Spatial zones</td><td>77</td></tr>
+              <tr><td>Foreign-student proportion</td><td>0.077</td></tr>
+              <tr><td>Mean distance to school</td><td>3.12 km</td></tr>
+              <tr><td>Median distance to school</td><td>2.34 km</td></tr>
+            </tbody>
+          </table>
+        </div>
       </article>
     </section>
 
     <section id="privacy" class="section dark">
       <div class="section-header">
         <p class="eyebrow">Ethical and Privacy-Aware Publication</p>
-        <h2>Why the public repository does not include raw data</h2>
+        <h2>Why the public version is selective</h2>
       </div>
 
       <div class="grid three">
         <div class="card dark-card">
           <h3>No raw student data</h3>
           <p>
-            Original datasets are not published because they may contain names, addresses, family information and
-            institutional records.
+            The original datasets are excluded because they may include names, addresses, family information and institutional records.
           </p>
         </div>
 
         <div class="card dark-card">
-          <h3>Aggregated outputs only</h3>
+          <h3>Aggregate outputs only</h3>
           <p>
-            The public version prioritizes aggregate charts, summary tables and sanitized notebooks rather than
-            row-level records.
+            The web page shows aggregate charts, summary tables and notebook-derived findings rather than row-level tables.
           </p>
         </div>
 
         <div class="card dark-card">
           <h3>Spatial caution</h3>
           <p>
-            Exact point maps and sensitive demographic categories should not be combined publicly without strong
-            anonymization or aggregation.
+            Exact point maps and sensitive demographic categories are not crossed publicly in order to reduce re-identification risk.
           </p>
         </div>
       </div>
@@ -240,15 +315,14 @@
         <p class="eyebrow">Repository</p>
         <h2>Technical materials</h2>
         <p>
-          The repository includes sanitized notebooks, documentation, aggregate tables and selected visual outputs.
+          The repository includes sanitized notebooks, documentation, public-safe figures and this static portfolio page.
         </p>
       </div>
 
       <div class="links">
         <a href="README.md">Project README</a>
+        <a href="docs/notebook_output_audit.md">Notebook output audit</a>
         <a href="docs/methodology.md">Methodological note</a>
-        <a href="docs/portfolio_description.md">Portfolio description</a>
-        <a href="docs/github_pages_setup.md">GitHub Pages setup</a>
         <a href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Quantitative notebook</a>
         <a href="notebooks/02_geospatial_analysis_sanitized.ipynb">Geospatial notebook</a>
       </div>
@@ -262,6 +336,7 @@
         <span>GeoPandas</span>
         <span>Geopy</span>
         <span>Jupyter</span>
+        <span>Google Colab</span>
         <span>HTML</span>
         <span>CSS</span>
         <span>GitHub Pages</span>
