@@ -38,6 +38,7 @@ The original datasets are not included.
 They may contain sensitive institutional and student-level information such as names, addresses, family or guardian attributes and enrollment records. This public version includes only:
 
 - sanitized notebooks;
+- reusable Python modules;
 - aggregate outputs;
 - public-safe SVG figures;
 - methodological documentation;
@@ -112,6 +113,26 @@ The geospatial notebook reports `323` geocoded cases, `77` spatial zones, and an
 
 Student nationality is highly concentrated in the Argentine category (`326` records, `91.83%`). Guardian nationality is more heterogeneous: Argentine (`121`), Italian (`86`), missing/undetermined (`62`), Spanish (`53`) and French (`14`) are the most frequent categories.
 
+## Reusable Python code
+
+The repository now includes a lightweight `src/` layer that translates the Colab workflow into reusable Python modules:
+
+- `src/data_cleaning.py` — column normalization, course canonicalization, age coercion, date parsing and public-safe column selection.
+- `src/enrollment_analysis.py` — annual counts, course-year matrices, age statistics, age ranges and course-level change.
+- `src/geospatial_analysis.py` — distance calculations, distance summaries, frequency tables and spatial-zone summaries.
+- `src/visualization.py` — public-safe chart and HTML table exports.
+- `src/run_public_analysis.py` — example command-line runner for anonymized or synthetic CSV files.
+
+The original sensitive datasets are not included, so the runner is intended for anonymized, synthetic or locally provided data with equivalent columns.
+
+Example:
+
+```bash
+python src/run_public_analysis.py \
+  --input data/anonymized_enrollment.csv \
+  --output outputs
+```
+
 ## Repository structure
 
 ```text
@@ -134,11 +155,23 @@ school-enrollment-geospatial-analysis/
 ├── docs/
 │   ├── methodology.md
 │   ├── notebook_output_audit.md
+│   ├── code_structure.md
 │   └── github_pages_setup.md
 │
-└── notebooks/
-    ├── 01_quantitative_enrollment_analysis_sanitized.ipynb
-    └── 02_geospatial_analysis_sanitized.ipynb
+├── notebooks/
+│   ├── 01_quantitative_enrollment_analysis_sanitized.ipynb
+│   └── 02_geospatial_analysis_sanitized.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── data_cleaning.py
+│   ├── enrollment_analysis.py
+│   ├── geospatial_analysis.py
+│   ├── visualization.py
+│   └── run_public_analysis.py
+│
+└── tests/
+    └── test_enrollment_analysis.py
 ```
 
 ## Technologies
@@ -154,6 +187,7 @@ school-enrollment-geospatial-analysis/
 - HTML
 - CSS
 - GitHub Pages
+- Pytest
 
 ## Skills demonstrated
 
@@ -165,6 +199,7 @@ school-enrollment-geospatial-analysis/
 - Distance estimation
 - Aggregate sociodemographic analysis
 - Data visualization
+- Reusable Python module design
 - Static portfolio publishing
 - Privacy-aware portfolio preparation
 
@@ -175,7 +210,7 @@ The notebooks are sanitized methodological versions. They document the analytica
 To adapt the project to another dataset:
 
 1. Place anonymized or synthetic files in a local `data/` folder.
-2. Adjust the data loading cells in the notebooks.
+2. Adjust the data loading cells in the notebooks or use `src/run_public_analysis.py`.
 3. Keep row-level sensitive data out of public commits.
 4. Export only aggregate tables, charts or anonymized spatial summaries.
 5. Update the public-facing web page with safe visual outputs only.
