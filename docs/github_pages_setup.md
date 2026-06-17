@@ -1,18 +1,24 @@
 # GitHub Pages setup
 
-This repository includes a static web page built with `index.html` and `styles.css`.
+This repository includes a static web page:
 
-To publish or update the site:
+- `index.html`
+- `styles.css`
 
-1. Go to repository Settings.
-2. Open Pages.
-3. Choose Deploy from a branch.
-4. Select branch `main`.
-5. Select folder `/root`.
-6. Save.
+To publish it with GitHub Pages:
 
-After each commit to `main`, GitHub Pages may take a few minutes to refresh.
+1. Go to the repository settings.
+2. Open **Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select:
+   - Branch: `main`
+   - Folder: `/root`
+5. Save.
 
-Project page:
+The page should become available at:
 
-`https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/`
+```text
+https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/
+```
+
+After each commit, GitHub Pages may take a few minutes to refresh. Use a hard refresh or an incognito window if old content remains cached.
