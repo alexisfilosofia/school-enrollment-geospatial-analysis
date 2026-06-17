@@ -1,8 +1,11 @@
 # School Enrollment and Geospatial Analysis
 
-A privacy-preserving portfolio project based on quantitative and geospatial analysis of historical school enrollment records.
+A privacy-preserving portfolio project based on two Google Colab notebooks for historical school enrollment analysis:
 
-This repository presents a sanitized version of an institutional analytics workflow. It combines enrollment trends, age distributions, course-level patterns, spatial concentration analysis, distance-to-school estimation, and aggregate sociodemographic indicators.
+- `Archivo_PST_Cuanti.ipynb` — quantitative enrollment analysis.
+- `Archivo_PST_GEO_Final.ipynb` — geospatial and socio-spatial analysis.
+
+The public repository reorganizes those notebook outputs into a readable portfolio project. It keeps the analytical logic visible while avoiding publication of raw student-level records, addresses, names or sensitive individual information.
 
 ## Live project page
 
@@ -10,20 +13,23 @@ The project can be viewed as a static portfolio page through GitHub Pages:
 
 [`https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/`](https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/)
 
-## Project goals
+## Project scope
 
-The project shows how Python can be used to transform fragmented institutional records into analytical outputs that support historical, educational and territorial interpretation.
+The workflow consolidates historical enrollment spreadsheets and produces aggregate outputs for institutional, educational and territorial interpretation.
 
-The analysis focuses on:
+The notebooks document:
 
-- annual enrollment volume;
-- age composition by year;
-- age dispersion and outlier detection;
-- entry course distribution by year;
-- geospatial distribution of students;
-- distance-to-school patterns;
-- aggregate guardian nationality frequencies;
-- privacy-aware reporting of sensitive educational data.
+- consolidation of enrollment files from 1910 to 1915;
+- normalization of heterogeneous course labels into six canonical entry courses;
+- reconstruction and validation of dates;
+- age cleaning and descriptive statistics;
+- enrollment counts by year and by course;
+- age composition by range, year and course;
+- interannual variation in course enrollment;
+- approximate distance-to-school analysis;
+- guardian occupation summaries;
+- student and guardian nationality summaries;
+- methodological and privacy-aware export decisions.
 
 ## Data privacy
 
@@ -34,52 +40,77 @@ They may contain sensitive institutional and student-level information such as n
 - sanitized notebooks;
 - aggregate outputs;
 - public-safe SVG figures;
-- methodological documentation.
+- methodological documentation;
+- a static web page for portfolio review.
 
 No raw student-level dataset is published in this repository.
 
-## Selected outputs
+## Notebook-derived findings
 
-The figures below are public-safe renderings for portfolio presentation. They avoid exposing row-level student records, addresses or sensitive individual information.
+### Dataset consolidation
 
-### 1. Annual enrollment volume
+The quantitative notebook consolidates `1,408` records and `22` columns across six enrollment files. Course labels are normalized into:
+
+```text
+1º Año, 2º Año, 3º Año, 4º Año, 5º Año, 6º Año
+```
+
+### Annual enrollment volume
 
 ![Annual enrollment by year](assets/screenshots/01_total_enrollment_by_year.svg)
 
-This chart summarizes the total number of student records by registry year, using aggregate course-year counts.
+Annual enrollment records increase from `155` in 1910 to `355` in 1915.
 
-### 2. Age-range composition by year
+| Year | Records |
+|---:|---:|
+| 1910 | 155 |
+| 1911 | 182 |
+| 1912 | 183 |
+| 1913 | 216 |
+| 1914 | 317 |
+| 1915 | 355 |
+
+### Age structure
 
 ![Age range distribution by year](assets/screenshots/02_age_range_distribution_by_year.svg)
 
-This stacked visualization communicates the structure of age composition across years without exposing individual ages.
-
-### 3. Age distribution and outlier detection
-
 ![Age boxplot by year](assets/screenshots/03_age_boxplot_by_year.svg)
 
-This boxplot-style rendering explains the distributional logic used in the notebook: median comparison, dispersion and outlier review.
+The age statistics are stable around late adolescence. The median age is `18` from 1910 to 1914 and falls to `17` in 1915. The maximum observed age reaches `37` in 1915, which is treated as an outlier requiring contextual interpretation rather than automatic deletion.
 
-### 4. Entry course frequency by year
+| Year | n with age | Mean | Median | Min | Max |
+|---:|---:|---:|---:|---:|---:|
+| 1910 | 154 | 18.86 | 18 | 15 | 28 |
+| 1911 | 182 | 18.51 | 18 | 13 | 29 |
+| 1912 | 183 | 18.57 | 18 | 14 | 28 |
+| 1913 | 215 | 18.78 | 18 | 16 | 32 |
+| 1914 | 317 | 18.70 | 18 | 15 | 30 |
+| 1915 | 354 | 18.15 | 17 | 15 | 37 |
 
-The public version includes the aggregated course-year table as CSV and HTML:
+### Course-level enrollment dynamics
 
-- [`assets/tables/course_year_heatmap_table.csv`](assets/tables/course_year_heatmap_table.csv)
-- [`assets/tables/course_year_heatmap_table.html`](assets/tables/course_year_heatmap_table.html)
+The course-year table shows a strong concentration in `1º Año`, especially from 1914 onward.
 
-This output supports the analysis of how student entry patterns vary across years and courses.
+| Year | 1º Año | 2º Año | 3º Año | 4º Año | 5º Año | 6º Año |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1910 | 44 | 22 | 21 | 12 | 35 | 21 |
+| 1911 | 46 | 24 | 15 | 22 | 32 | 21 |
+| 1912 | 67 | 30 | 21 | 14 | 38 | 13 |
+| 1913 | 69 | 43 | 24 | 17 | 53 | 10 |
+| 1914 | 126 | 45 | 45 | 19 | 66 | 15 |
+| 1915 | 139 | 78 | 45 | 40 | 38 | 15 |
 
-### 5. Distance-to-school distribution
+Between 1910 and 1915, `1º Año` grows from `44` to `139` records, while `2º Año` grows from `22` to `78`. `6º Año` decreases from `21` to `15`, suggesting that the expansion is concentrated more strongly in the lower entry courses.
+
+### Geospatial and socio-spatial analysis
 
 ![Distance to school distribution](assets/screenshots/05_distance_to_school_distribution.svg)
 
-This histogram-style visualization shows the approximate distance between student residences and the school at an aggregate level.
-
-### 6. Guardian nationality distribution
+The geospatial notebook reports `323` geocoded cases, `77` spatial zones, and an approximate mean distance to school of `3.12 km`, with a median distance of `2.34 km`.
 
 ![Guardian nationality distribution](assets/screenshots/06_guardian_nationality_distribution.svg)
 
-This chart summarizes guardian nationality frequencies at an aggregate level, without linking categories to addresses or individuals.
+Student nationality is highly concentrated in the Argentine category (`326` records, `91.83%`). Guardian nationality is more heterogeneous: Argentine (`121`), Italian (`86`), missing/undetermined (`62`), Spanish (`53`) and French (`14`) are the most frequent categories.
 
 ## Repository structure
 
@@ -102,22 +133,13 @@ school-enrollment-geospatial-analysis/
 │
 ├── docs/
 │   ├── methodology.md
-│   ├── portfolio_description.md
+│   ├── notebook_output_audit.md
 │   └── github_pages_setup.md
 │
 └── notebooks/
     ├── 01_quantitative_enrollment_analysis_sanitized.ipynb
     └── 02_geospatial_analysis_sanitized.ipynb
 ```
-
-## Web page
-
-This repository includes a static portfolio page:
-
-- [`index.html`](index.html)
-- [`styles.css`](styles.css)
-
-The page presents the main analytical outputs from the notebooks as a readable project report for recruiters, clients and portfolio reviewers.
 
 ## Technologies
 
