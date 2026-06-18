@@ -35,15 +35,17 @@ The notebooks document:
 
 The original datasets are not included. This public version includes only:
 
-- sanitized notebooks;
 - reusable Python modules;
 - aggregate outputs;
+- a synthetic/anonymized sample dataset;
 - selected PNG figures exported from the Colab notebooks;
 - public-safe SVG fallback figures;
 - methodological documentation;
 - a static web page for portfolio review.
 
-No raw row-level dataset is published in this repository.
+Sanitized notebooks are planned as a future addition. They are not included in the current public repository.
+
+No raw archival row-level dataset is published in this repository.
 
 ## Notebook-derived findings
 
@@ -124,7 +126,7 @@ The density heatmap is included as a public-facing spatial summary.
 
 ### Historical point map
 
-<img src="assets/screenshots/07_%73tudent_spatial_distribution_%70oints.png" alt="Historical point map">
+<img src="assets/screenshots/07_student_spatial_distribution_points.png" alt="Historical point map">
 
 This point-based map is included as a historical-geographic visualization because the records correspond to the 1910–1915 period.
 
@@ -140,13 +142,17 @@ The repository now includes a lightweight `src/` layer that translates the Colab
 
 The original sensitive datasets are not included, so the runner is intended for anonymized, synthetic or locally provided data with equivalent columns.
 
-Example:
+## Reproducing the public sample analysis
+
+Install the project dependencies, then run the public analysis script against the synthetic/anonymized sample dataset:
 
 ```bash
 python src/run_public_analysis.py \
-  --input data/anonymized_enrollment.csv \
+  --input data/sample_anonymized_enrollment.csv \
   --output outputs
 ```
+
+This command writes reproducible aggregate outputs to `outputs/` using the public synthetic/anonymized sample dataset. The runner defaults are aligned with the sample columns: `registry_year`, `course` and `age`.
 
 ## Repository structure
 
@@ -159,23 +165,23 @@ school-enrollment-geospatial-analysis/
 ├── requirements.txt
 ├── LICENSE
 ├── .gitignore
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 │
 ├── assets/
 │   ├── screenshots/
 │   └── tables/
 │
 ├── data/
-│   └── README.md
+│   ├── README.md
+│   └── sample_anonymized_enrollment.csv
 │
 ├── docs/
 │   ├── methodology.md
 │   ├── notebook_output_audit.md
 │   ├── code_structure.md
 │   └── github_pages_setup.md
-│
-├── notebooks/
-│   ├── 01_quantitative_enrollment_analysis_sanitized.ipynb
-│   └── 02_geospatial_analysis_sanitized.ipynb
 │
 ├── src/
 │   ├── __init__.py
@@ -184,6 +190,14 @@ school-enrollment-geospatial-analysis/
 │   ├── geospatial_analysis.py
 │   ├── visualization.py
 │   └── run_public_analysis.py
+│
+├── outputs/
+│   ├── README.md
+│   ├── annual_enrollment_counts.csv
+│   ├── course_year_matrix.csv
+│   ├── course_change.csv
+│   ├── age_statistics_by_year.csv
+│   └── course_year_matrix.html
 │
 └── tests/
     └── test_enrollment_analysis.py
@@ -220,12 +234,12 @@ school-enrollment-geospatial-analysis/
 
 ## How to use this repository
 
-The notebooks are sanitized methodological versions. They document the analytical workflow without exposing the original sensitive files.
+Sanitized notebooks are planned as a future addition. The current public version documents the notebook-derived workflow through reusable Python modules, aggregate outputs and methodological notes.
 
 To adapt the project to another dataset:
 
 1. Place anonymized or synthetic files in a local `data/` folder.
-2. Adjust the data loading cells in the notebooks or use `src/run_public_analysis.py`.
+2. Use `src/run_public_analysis.py` or adapt the reusable modules in `src/`.
 3. Keep row-level sensitive data out of public commits.
 4. Export only aggregate tables, charts or anonymized spatial summaries.
 5. Update the public-facing web page with safe visual outputs only.

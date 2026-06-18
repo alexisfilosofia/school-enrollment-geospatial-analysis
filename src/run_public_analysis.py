@@ -6,7 +6,7 @@ repository.
 
 Usage example:
 
-    python src/run_public_analysis.py --input data/anonymized_enrollment.csv --output outputs
+    python src/run_public_analysis.py --input data/sample_anonymized_enrollment.csv --output outputs
 
 Expected minimum columns can be adapted with command-line arguments.
 """
@@ -14,28 +14,32 @@ Expected minimum columns can be adapted with command-line arguments.
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
-from data_cleaning import add_canonical_course_column, coerce_numeric_age, normalize_columns
-from enrollment_analysis import (
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from src.data_cleaning import add_canonical_course_column, coerce_numeric_age, normalize_columns
+from src.enrollment_analysis import (
     DEFAULT_COURSE_ORDER,
     age_statistics_by_year,
     annual_enrollment_counts,
     course_change_between_years,
     course_year_matrix,
 )
-from visualization import export_table_html, save_annual_enrollment_chart, save_course_matrix_heatmap
+from src.visualization import export_table_html, save_annual_enrollment_chart, save_course_matrix_heatmap
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run public-safe enrollment analysis on anonymized data.")
     parser.add_argument("--input", required=True, help="Path to an anonymized CSV file.")
     parser.add_argument("--output", default="outputs", help="Directory where aggregate outputs will be written.")
-    parser.add_argument("--year-column", default="anio_libro", help="Registry year column name after normalization.")
-    parser.add_argument("--course-column", default="curso", help="Course column name after normalization.")
-    parser.add_argument("--age-column", default="edad", help="Age column name after normalization.")
+    parser.add_argument("--year-column", default="registry_year", help="Registry year column name after normalization.")
+    parser.add_argument("--course-column", default="course", help="Course column name after normalization.")
+    parser.add_argument("--age-column", default="age", help="Age column name after normalization.")
     return parser.parse_args()
 
 
