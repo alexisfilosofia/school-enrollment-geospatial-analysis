@@ -27,37 +27,29 @@
 
   <main>
     <section id="overview" class="section">
-      <div class="section-header">
-        <p class="eyebrow">Overview</p>
-        <h2>From Colab notebooks to a public portfolio report</h2>
-      </div>
+      <div class="section-header"><p class="eyebrow">Overview</p><h2>From Colab notebooks to a public portfolio report</h2></div>
       <div class="grid two">
         <div class="card"><h3>Problem</h3><p>Historical institutional spreadsheets usually require cleaning, normalization and careful interpretation before producing analytical outputs.</p></div>
         <div class="card"><h3>Approach</h3><p>The project reorganizes selected notebook outputs into a public-facing report with aggregate charts, summary tables and reusable Python modules.</p></div>
       </div>
-      <div class="metrics">
-        <div class="metric"><span class="metric-value">1,408</span><span class="metric-label">Consolidated records</span></div>
-        <div class="metric"><span class="metric-value">1910–1915</span><span class="metric-label">Registry years</span></div>
-        <div class="metric"><span class="metric-value">Python</span><span class="metric-label">Analysis workflow</span></div>
-      </div>
+      <div class="metrics"><div class="metric"><span class="metric-value">1,408</span><span class="metric-label">Consolidated records</span></div><div class="metric"><span class="metric-value">1910–1915</span><span class="metric-label">Registry years</span></div><div class="metric"><span class="metric-value">Python</span><span class="metric-label">Analysis workflow</span></div></div>
     </section>
 
     <section id="quantitative" class="section">
       <div class="section-header"><p class="eyebrow">Quantitative Analysis</p><h2>Enrollment volume, age structure and course dynamics</h2></div>
-
       <article class="output"><div class="output-text"><h3>Annual enrollment growth</h3><p>The dataset grows from 155 records in 1910 to 355 in 1915, with the strongest increase after 1913.</p></div><figure><img src="assets/screenshots/01_total_enrollment_by_year.png" alt="Annual enrollment by year" /><figcaption>Annual registration counts by year.</figcaption></figure></article>
       <article class="output reverse"><div class="output-text"><h3>Age composition by year</h3><p>Age ranges are grouped into 13, 14–15, 16–17, 18–24 and 25+ bands.</p></div><figure><img src="assets/screenshots/02_age_range_distribution_by_year.png" alt="Age range distribution by year" /><figcaption>Age-range distribution by registry year.</figcaption></figure></article>
       <article class="output"><div class="output-text"><h3>Age dispersion and outliers</h3><p>The boxplot shows medians, dispersion and outlier values across the 1910–1915 period.</p></div><figure><img src="assets/screenshots/03_age_boxplot_by_year.png" alt="Age boxplot by year" /><figcaption>Age distribution by year.</figcaption></figure></article>
       <article class="output reverse"><div class="output-text"><h3>Age ranges by course and year</h3><p>This chart disaggregates age ranges by entry course and registry year.</p></div><figure><img src="assets/screenshots/04_age_range_by_course_and_year.png" alt="Age range by course and year" /><figcaption>Age-range composition by entry course.</figcaption></figure></article>
-
       <article class="table-block"><div><h3>Course-year matrix</h3><p>The course-level matrix shows that growth is concentrated in lower entry courses.</p></div><div class="responsive-table"><table><thead><tr><th>Year</th><th>1º Año</th><th>2º Año</th><th>3º Año</th><th>4º Año</th><th>5º Año</th><th>6º Año</th></tr></thead><tbody><tr><td>1910</td><td>44</td><td>22</td><td>21</td><td>12</td><td>35</td><td>21</td></tr><tr><td>1911</td><td>46</td><td>24</td><td>15</td><td>22</td><td>32</td><td>21</td></tr><tr><td>1912</td><td>67</td><td>30</td><td>21</td><td>14</td><td>38</td><td>13</td></tr><tr><td>1913</td><td>69</td><td>43</td><td>24</td><td>17</td><td>53</td><td>10</td></tr><tr><td>1914</td><td>126</td><td>45</td><td>45</td><td>19</td><td>66</td><td>15</td></tr><tr><td>1915</td><td>139</td><td>78</td><td>45</td><td>40</td><td>38</td><td>15</td></tr></tbody></table></div></article>
     </section>
 
     <section id="geospatial" class="section">
-      <div class="section-header"><p class="eyebrow">Geospatial Analysis</p><h2>Distance, density and aggregate categories</h2></div>
+      <div class="section-header"><p class="eyebrow">Geospatial Analysis</p><h2>Distance, density and spatial distribution</h2></div>
       <article class="output"><div class="output-text"><h3>Distance distribution</h3><p>The approximate mean distance is 3.12 km and the median distance is 2.34 km.</p></div><figure><img src="assets/screenshots/05_distance_to_school_distribution.png" alt="Distance distribution" /><figcaption>Aggregate distance histogram.</figcaption></figure></article>
       <article class="output reverse"><div class="output-text"><h3>Guardian nationality</h3><p>The most frequent categories are Argentine, Italian, missing/undetermined, Spanish and French.</p></div><figure><img src="assets/screenshots/06_guardian_nationality_distribution.png" alt="Guardian nationality distribution" /><figcaption>Aggregate guardian nationality frequencies.</figcaption></figure></article>
       <article class="output"><div class="output-text"><h3>Spatial density heatmap</h3><p>The density heatmap summarizes spatial concentration patterns for public presentation.</p></div><figure><img src="assets/screenshots/07_student_spatial_density_heatmap.png" alt="Spatial density heatmap" /><figcaption>Density view of the spatial distribution.</figcaption></figure></article>
+      <article class="output reverse"><div class="output-text"><h3>Historical point map</h3><p>This map adds the point-based historical view from the geospatial notebook. Since the dataset corresponds to 1910–1915, it is used as a historical geography visualization alongside the density heatmap.</p></div><figure><img src="assets/screenshots/07_%73tudent_spatial_distribution_%70oints.png" alt="Historical point map" /><figcaption>Point-based historical spatial distribution and school marker.</figcaption></figure></article>
     </section>
 
     <section id="repository" class="section"><div class="section-header"><p class="eyebrow">Repository</p><h2>Technical materials</h2><p>The repository includes sanitized notebooks, reusable Python modules, documentation, figures and this static portfolio page.</p></div><div class="links"><a href="README.md">Project README</a><a href="docs/notebook_output_audit.md">Notebook output audit</a><a href="docs/methodology.md">Methodological note</a><a href="docs/code_structure.md">Code structure</a><a href="notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb">Quantitative notebook</a><a href="notebooks/02_geospatial_analysis_sanitized.ipynb">Geospatial notebook</a></div><div class="tech-stack"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Folium</span><span>GeoPandas</span><span>Geopy</span><span>Jupyter</span><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div></section>
