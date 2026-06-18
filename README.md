@@ -122,6 +122,12 @@ Student nationality is highly concentrated in the Argentine category (`326` reco
 
 The density heatmap is included as a public-facing spatial summary.
 
+### Historical point map
+
+<img src="assets/screenshots/07_%73tudent_spatial_distribution_%70oints.png" alt="Historical point map">
+
+This point-based map is included as a historical-geographic visualization because the records correspond to the 1910–1915 period.
+
 ## Reusable Python code
 
 The repository now includes a lightweight `src/` layer that translates the Colab workflow into reusable Python modules:
