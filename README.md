@@ -5,7 +5,7 @@ A privacy-preserving portfolio project based on two Google Colab notebooks for h
 - `Archivo_PST_Cuanti.ipynb` — quantitative enrollment analysis.
 - `Archivo_PST_GEO_Final.ipynb` — geospatial and socio-spatial analysis.
 
-The public repository reorganizes those notebook outputs into a readable portfolio project. It keeps the analytical logic visible while avoiding publication of raw student-level records, addresses, names or sensitive individual information.
+The public repository reorganizes those notebook outputs into a readable portfolio project. It keeps the analytical logic visible while avoiding publication of raw row-level records.
 
 ## Live project page
 
@@ -26,25 +26,24 @@ The notebooks document:
 - enrollment counts by year and by course;
 - age composition by range, year and course;
 - interannual variation in course enrollment;
-- approximate distance-to-school analysis;
+- approximate distance analysis;
 - guardian occupation summaries;
 - student and guardian nationality summaries;
 - methodological and privacy-aware export decisions.
 
 ## Data privacy
 
-The original datasets are not included.
-
-They may contain sensitive institutional and student-level information such as names, addresses, family or guardian attributes and enrollment records. This public version includes only:
+The original datasets are not included. This public version includes only:
 
 - sanitized notebooks;
 - reusable Python modules;
 - aggregate outputs;
-- public-safe SVG figures;
+- selected PNG figures exported from the Colab notebooks;
+- public-safe SVG fallback figures;
 - methodological documentation;
 - a static web page for portfolio review.
 
-No raw student-level dataset is published in this repository.
+No raw row-level dataset is published in this repository.
 
 ## Notebook-derived findings
 
@@ -58,7 +57,7 @@ The quantitative notebook consolidates `1,408` records and `22` columns across s
 
 ### Annual enrollment volume
 
-![Annual enrollment by year](assets/screenshots/01_total_enrollment_by_year.svg)
+![Annual enrollment by year](assets/screenshots/01_total_enrollment_by_year.png)
 
 Annual enrollment records increase from `155` in 1910 to `355` in 1915.
 
@@ -73,9 +72,9 @@ Annual enrollment records increase from `155` in 1910 to `355` in 1915.
 
 ### Age structure
 
-![Age range distribution by year](assets/screenshots/02_age_range_distribution_by_year.svg)
+![Age range distribution by year](assets/screenshots/02_age_range_distribution_by_year.png)
 
-![Age boxplot by year](assets/screenshots/03_age_boxplot_by_year.svg)
+![Age boxplot by year](assets/screenshots/03_age_boxplot_by_year.png)
 
 The age statistics are stable around late adolescence. The median age is `18` from 1910 to 1914 and falls to `17` in 1915. The maximum observed age reaches `37` in 1915, which is treated as an outlier requiring contextual interpretation rather than automatic deletion.
 
@@ -87,6 +86,12 @@ The age statistics are stable around late adolescence. The median age is `18` fr
 | 1913 | 215 | 18.78 | 18 | 16 | 32 |
 | 1914 | 317 | 18.70 | 18 | 15 | 30 |
 | 1915 | 354 | 18.15 | 17 | 15 | 37 |
+
+### Age ranges by course and year
+
+![Age ranges by course and year](assets/screenshots/04_age_range_by_course_and_year.png)
+
+This output disaggregates age ranges by entry course and registry year.
 
 ### Course-level enrollment dynamics
 
@@ -105,13 +110,17 @@ Between 1910 and 1915, `1º Año` grows from `44` to `139` records, while `2º A
 
 ### Geospatial and socio-spatial analysis
 
-![Distance to school distribution](assets/screenshots/05_distance_to_school_distribution.svg)
+![Distance distribution](assets/screenshots/05_distance_to_school_distribution.png)
 
-The geospatial notebook reports `323` geocoded cases, `77` spatial zones, and an approximate mean distance to school of `3.12 km`, with a median distance of `2.34 km`.
+The geospatial notebook reports `323` cases, `77` spatial zones, and an approximate mean distance of `3.12 km`, with a median distance of `2.34 km`.
 
-![Guardian nationality distribution](assets/screenshots/06_guardian_nationality_distribution.svg)
+![Guardian nationality distribution](assets/screenshots/06_guardian_nationality_distribution.png)
 
 Student nationality is highly concentrated in the Argentine category (`326` records, `91.83%`). Guardian nationality is more heterogeneous: Argentine (`121`), Italian (`86`), missing/undetermined (`62`), Spanish (`53`) and French (`14`) are the most frequent categories.
+
+![Spatial density heatmap](assets/screenshots/07_student_spatial_density_heatmap.png)
+
+The density heatmap is included as a public-facing spatial summary.
 
 ## Reusable Python code
 
@@ -217,6 +226,4 @@ To adapt the project to another dataset:
 
 ## Ethical note
 
-Educational and geospatial data can be sensitive, even when names are removed. Locations, nationality, family roles and institutional records can become identifying when combined.
-
-For that reason, this repository is designed as a public portfolio version rather than a full data release.
+Educational and geospatial data can be sensitive, even when names are removed. For that reason, this repository is designed as a public portfolio version rather than a full data release.
