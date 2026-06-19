@@ -13,6 +13,16 @@ The project can be viewed as a static portfolio page through GitHub Pages:
 
 [`https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/`](https://alexisfilosofia.github.io/school-enrollment-geospatial-analysis/)
 
+## Public sanitized notebooks
+
+The repository includes clean, reproducible notebooks based on the synthetic/anonymized sample dataset:
+
+- [01 Quantitative Enrollment Analysis](notebooks/01_quantitative_enrollment_analysis_sanitized.ipynb)
+- [02 Geospatial Analysis](notebooks/02_geospatial_analysis_sanitized.ipynb)
+- [Notebook guide](notebooks/README.md)
+
+These notebooks are public portfolio versions. They do not copy the private working notebooks or publish raw row-level records.
+
 ## Project scope
 
 The workflow consolidates historical enrollment spreadsheets and produces aggregate outputs for institutional, educational and territorial interpretation.
@@ -38,12 +48,13 @@ The original datasets are not included. This public version includes only:
 - reusable Python modules;
 - aggregate outputs;
 - a synthetic/anonymized sample dataset;
+- sanitized public notebooks;
 - selected PNG figures exported from the Colab notebooks;
 - public-safe SVG fallback figures;
 - methodological documentation;
 - a static web page for portfolio review.
 
-Sanitized notebooks are planned as a future addition. They are not included in the current public repository.
+The public notebooks use `data/sample_anonymized_enrollment.csv` and reproduce aggregate analysis only.
 
 No raw archival row-level dataset is published in this repository.
 
@@ -183,6 +194,11 @@ school-enrollment-geospatial-analysis/
 │   ├── code_structure.md
 │   └── github_pages_setup.md
 │
+├── notebooks/
+│   ├── README.md
+│   ├── 01_quantitative_enrollment_analysis_sanitized.ipynb
+│   └── 02_geospatial_analysis_sanitized.ipynb
+│
 ├── src/
 │   ├── __init__.py
 │   ├── data_cleaning.py
@@ -234,7 +250,7 @@ school-enrollment-geospatial-analysis/
 
 ## How to use this repository
 
-Sanitized notebooks are planned as a future addition. The current public version documents the notebook-derived workflow through reusable Python modules, aggregate outputs and methodological notes.
+Start with the sanitized notebooks in `notebooks/` or run the reusable Python modules directly against the public sample dataset.
 
 To adapt the project to another dataset:
 
